@@ -1,0 +1,15 @@
+<!-- home.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<form  hx-post="{% url 'create-player' %}" hx-target="this" hx-swap="outerHTML">
+{% for field in form %}
+{{ field.errors }}
+{{ field.label_tag }} {{field}}
+{% endfor %}
+<button>Submite</button>
+
+</form> 
+
+{% endblock %}
